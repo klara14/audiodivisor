@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h1>Resultados </h1>
+
+    {% if fracciones_audio %}
+    <h2>Fracciones de Audio para {{ titulo }}</h2>
+    <ul>
+        {% for fraccion in fracciones_audio %}
+            <li>{{ fraccion }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <a class="btn btn-primary" href="{% url 'index' %}" role="button">Volver</a>
+</div>
+
+
+
+{% endblock %}

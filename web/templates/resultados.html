@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h1>Resultados </h1>
+
+    {% if fracciones_audio1 %}
+    <h2>Fracciones de Audio para {{ titulo1 }}</h2>
+    <ul>
+        {% for fraccion in fracciones_audio1 %}
+            <li>{{ fraccion }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if fracciones_audio2 %}
+    <h2>Fracciones de Audio para {{ titulo2 }}</h2>
+    <ul>
+        {% for fraccion in fracciones_audio2 %}
+            <li>{{ fraccion }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <a class="btn btn-primary" href="{% url 'index' %}" role="button">Volver</a>
+</div>
+
+
+
+{% endblock %}
+
+

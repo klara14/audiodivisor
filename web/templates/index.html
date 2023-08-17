@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="container">
+    <h1>Divide tus audios</h1>
+    <form method="post" class="form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-primary" type="submit">Divide</button>
+
+
+        <a class="btn btn-primary" href="{% url 'dividir_audio' %}" role="button">Dividir un solo audio</a>
+
+    </form>
+
+    {% if error_message %}
+    <p class="error">{{ error_message }}</p>
+    {% endif %}
+
+{% endblock %}
+   
